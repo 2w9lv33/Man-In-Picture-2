@@ -13,6 +13,7 @@ public class ColorSystem : MonoBehaviour
     private Vector3 mousePosition;
     [SerializeField]public bool Use = false;
     public bool IsUILayer = false;
+    public SpriteMask spriteMask;
     [SerializeField] public Game.Color.MyColor palette;
 
     private void Update()
@@ -108,55 +109,62 @@ public class ColorSystem : MonoBehaviour
         switch (myColor)
         {
             case Game.Color.MyColor.RED:
+                colorfulOff();
                 player.GetComponent<SpriteRenderer>().color = UnityEngine.Color.red;
                 break;
             case Game.Color.MyColor.CYAN:
+                colorfulOff();
                 player.GetComponent<SpriteRenderer>().color = UnityEngine.Color.cyan;
                 break;
             case Game.Color.MyColor.GREEN:
+                colorfulOff();
                 player.GetComponent<SpriteRenderer>().color = UnityEngine.Color.green;
                 break;
             case Game.Color.MyColor.PURPLE:
+                colorfulOff();
                 player.GetComponent<SpriteRenderer>().color = Game.Color.Purple;
                 break;
             case Game.Color.MyColor.ORANGE:
+                colorfulOff();
                 player.GetComponent<SpriteRenderer>().color = Game.Color.Orange;
                 break;
             case Game.Color.MyColor.BLUE:
+                colorfulOff();
                 player.GetComponent<SpriteRenderer>().color = UnityEngine.Color.blue;
                 break;
             case Game.Color.MyColor.YELLOW:
+                colorfulOff();
                 player.GetComponent<SpriteRenderer>().color = UnityEngine.Color.yellow;
                 break;
             case Game.Color.MyColor.BLACK:
+                colorfulOff();
                 player.GetComponent<SpriteRenderer>().color = UnityEngine.Color.gray;
                 break;
             case Game.Color.MyColor.NOCOLOR:
+                colorfulOff();
                 player.GetComponent<SpriteRenderer>().color = UnityEngine.Color.gray;
                 break;
             case Game.Color.MyColor.WHITE:
+                colorfulOff();
                 player.GetComponent<SpriteRenderer>().color = UnityEngine.Color.white;
+                break;
+            case Game.Color.MyColor.HASCOLOR:
+                colorfulOn();
                 break;
             default:
                 break;
         }
     }
 
-    //hide!
-    private void Hide()
+    public void colorfulOn()
     {
-        Color color = player.GetComponent<SpriteRenderer>().color;
-        color.a = 0.1f;
-        player.GetComponent<SpriteRenderer>().color = color;
-        PlayerController.canBeSeen = false;
+        spriteMask.enabled = true;
+        player.GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.VisibleOutsideMask;
     }
 
-    private void UnHide()
+    public void colorfulOff()
     {
-        Color color = player.GetComponent<SpriteRenderer>().color;
-        color.a = 1f;
-        player.GetComponent<SpriteRenderer>().color = color;
-        PlayerController.canBeSeen = true;
+        spriteMask.enabled = false;
+        player.GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.VisibleOutsideMask;
     }
-
 }

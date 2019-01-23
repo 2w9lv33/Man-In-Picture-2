@@ -13,6 +13,7 @@ public class ElecBoxControl : MonoBehaviour
     public GameObject Enemy;
     public ColorSystem ColorSystem;
     public GameObject trap;
+    public GameObject trap2;
 
     private void Update()
     {
@@ -24,6 +25,7 @@ public class ElecBoxControl : MonoBehaviour
             Invoke("OpenDoor", 1f);
             ColorSystem.IsUILayer = false;
             trap.SetActive(false);
+            trap2.SetActive(false);
             Canvas.gameObject.SetActive(false);
         }
         else
