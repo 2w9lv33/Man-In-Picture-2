@@ -19,6 +19,7 @@ public class ColorSystem : MonoBehaviour
     {
         Click();
         ChangePlayerColor(palette);
+        IsUILayer = false;
     }
 
     public void Click()
@@ -61,7 +62,7 @@ public class ColorSystem : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
         if (hit.collider != null)
         {
-            if (hit.transform.tag == "Item" && hit.transform.GetComponent<Game.Color>().canBeSet && palette != Game.Color.MyColor.NOCOLOR)
+            if ((hit.transform.tag == "Item" || hit.transform.tag == "Enemy") && hit.transform.GetComponent<Game.Color>().canBeSet && palette != Game.Color.MyColor.NOCOLOR)
             {
                 PlayerController.canMove = false;
                 animator.SetBool("Use", true);
@@ -91,7 +92,7 @@ public class ColorSystem : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
         if(hit.collider != null)
         {
-            if (hit.transform.tag == "Item" && hit.transform.GetComponent<Game.Color>().canBeGet)
+            if ((hit.transform.tag == "Item" || hit.transform.tag == "Enemy") && hit.transform.GetComponent<Game.Color>().canBeGet)
             {
                 PlayerController.canMove = false;
                 animator.SetBool("Use", true);
@@ -131,6 +132,9 @@ public class ColorSystem : MonoBehaviour
                 player.GetComponent<SpriteRenderer>().color = UnityEngine.Color.gray;
                 break;
             case Game.Color.MyColor.NOCOLOR:
+                player.GetComponent<SpriteRenderer>().color = UnityEngine.Color.gray;
+                break;
+            case Game.Color.MyColor.WHITE:
                 player.GetComponent<SpriteRenderer>().color = UnityEngine.Color.white;
                 break;
             default:

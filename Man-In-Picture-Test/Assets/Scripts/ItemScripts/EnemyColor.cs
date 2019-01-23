@@ -1,17 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class CageControl : MonoBehaviour
+public class EnemyColor : MonoBehaviour
 {
-    public Animator cage1, cage2;
-    public Game.Color color;
-    public GameObject bigman;
-    public SpriteMask SpriteMask;
-    public GameObject Player;
-    
-
+    [SerializeField] private Game.Color.MyColor myColor;
+    [SerializeField] private Game.Color.MyColor checkColor;
+    public Game.Color Color;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,29 +16,29 @@ public class CageControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(color.myColor == color.checkColor)
-        {
-            cage1.SetBool("Save", true);
-            cage2.SetBool("Save", true);
-            transform.Find("Pop").gameObject.SetActive(false);
-            SpriteMask.enabled = true;
-            Player.GetComponent<Animator>().SetBool("Get",true);
-            color.checkColor = Game.Color.MyColor.NOCOLOR;
-            GameObject.Find("key").GetComponent<SpriteRenderer>().enabled = true;
-            Invoke("Unshowkey", 3);
-        }
-        else
-        {
-            ChangeColor();
-        }
+        myColor = Color.myColor;
+        ChangeColor();
     }
-
     public void ChangeColor()
     {
-        switch (color.myColor)
+        if (transform.tag == "Item")
+        {
+            if (myColor == Game.Color.MyColor.WHITE)
+            {
+                transform.parent.transform.Find("after").gameObject.SetActive(true);
+                transform.gameObject.SetActive(false);
+            }
+        }
+        switch (myColor)
         {
             case Game.Color.MyColor.RED:
                 transform.GetComponent<SpriteRenderer>().color = UnityEngine.Color.red;
+                break;
+            case Game.Color.MyColor.ORANGE:
+                transform.GetComponent<SpriteRenderer>().color = Game.Color.Orange;
+                break;
+            case Game.Color.MyColor.PURPLE:
+                transform.GetComponent<SpriteRenderer>().color = Game.Color.Purple;
                 break;
             case Game.Color.MyColor.CYAN:
                 transform.GetComponent<SpriteRenderer>().color = UnityEngine.Color.cyan;
@@ -54,11 +49,14 @@ public class CageControl : MonoBehaviour
             case Game.Color.MyColor.YELLOW:
                 transform.GetComponent<SpriteRenderer>().color = UnityEngine.Color.yellow;
                 break;
+            case Game.Color.MyColor.GREEN:
+                transform.GetComponent<SpriteRenderer>().color = UnityEngine.Color.green;
+                break;
             case Game.Color.MyColor.BLACK:
                 transform.GetComponent<SpriteRenderer>().color = UnityEngine.Color.gray;
                 break;
             case Game.Color.MyColor.WHITE:
-                transform.GetComponent<Image>().color = UnityEngine.Color.white;
+                transform.GetComponent<SpriteRenderer>().color = UnityEngine.Color.white;
                 break;
             case Game.Color.MyColor.NOCOLOR:
                 transform.GetComponent<SpriteRenderer>().color = UnityEngine.Color.gray;
@@ -67,16 +65,4 @@ public class CageControl : MonoBehaviour
                 break;
         }
     }
-
-    public void SetBigMan()
-    {
-        bigman.SetActive(true);
-    }
-
-    public void Unshowkey()
-    {
-        GameObject.Find("key").GetComponent<SpriteRenderer>().enabled = false;
-
-    }
-
 }

@@ -9,7 +9,7 @@ namespace Game
         [SerializeField] public bool canBeGet = true;
         [SerializeField] public bool canBeSet = true;
         [SerializeField] private bool _same = false;
-        public enum MyColor { HASCOLOR, NOCOLOR, BLACK ,BLUE,RED,YELLOW,CYAN,ORANGE,PURPLE,GREEN };
+        public enum MyColor { HASCOLOR, NOCOLOR, BLACK ,BLUE,RED,YELLOW,CYAN,ORANGE,PURPLE,GREEN,WHITE };
         [SerializeField] private MyColor _myColor = MyColor.NOCOLOR;
         [SerializeField] private MyColor _checkColor = MyColor.NOCOLOR;
         public static UnityEngine.Color Orange = new UnityEngine.Color(1, 0.55f,0);

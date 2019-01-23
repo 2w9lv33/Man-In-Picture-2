@@ -49,7 +49,9 @@ public class CanvasControl : MonoBehaviour
                 m_Raycaster.Raycast(m_PointerEventData, results);
                 if (results.Count > 0)
                 {
-                    if(results[0].gameObject.GetComponent<Game.Color>().canBeGet)
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMove>().moveVelocity = 0f;
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().SetFloat("Speed", -5f);
+                    if (results[0].gameObject.tag == "Item" && results[0].gameObject.GetComponent<Game.Color>().canBeGet)
                     ColorSystem.palette = results[0].gameObject.GetComponent<Game.Color>().myColor;
                 }
             }
@@ -64,7 +66,9 @@ public class CanvasControl : MonoBehaviour
                 m_Raycaster.Raycast(m_PointerEventData, results);
                 if (results.Count > 0)
                 {
-                    if (results[0].gameObject.GetComponent<Game.Color>().canBeSet)
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMove>().moveVelocity = 0f;
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().SetFloat("Speed", -5f);
+                    if (results[0].gameObject.tag == "Item" && results[0].gameObject.GetComponent<Game.Color>().canBeSet)
                     {
                         results[0].gameObject.GetComponent<Game.Color>().myColor = ColorSystem.palette;
                         ColorSystem.palette = Game.Color.MyColor.NOCOLOR;

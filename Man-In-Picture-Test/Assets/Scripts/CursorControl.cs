@@ -24,7 +24,7 @@ public class CursorControl : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
         if (hit.collider != null)
         {
-            if (hit.transform.tag == "Item")
+            if (hit.transform.tag == "Item" || hit.transform.tag == "Enemy")
             {
                 if(ColorSystem.palette == Game.Color.MyColor.NOCOLOR)
                 {

@@ -9,10 +9,11 @@ public class PlayerMove : MonoBehaviour
     public Animator animator;
     [SerializeField] private float playerSpeed = 10f;
     public float moveVelocity = 0f;
+    public bool onUILayer = false;
     public Vector3 mousePosition = Vector3.zero;
 
     void Update () {
-        if (Input.GetMouseButtonDown(0) && !ColorSystem.IsUILayer)
+        if (Input.GetMouseButtonDown(0) && !onUILayer)
         {
             mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             moveVelocity = (mousePosition.x > transform.position.x ? 1 : -1) * playerSpeed;

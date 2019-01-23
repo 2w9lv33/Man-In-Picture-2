@@ -5,6 +5,7 @@ using UnityEngine;
 public class LampControl : MonoBehaviour
 {
     public Game.Color.MyColor color;
+    public GameObject White;
     public Game.Color Color;
     public bool red, yellow, green, blue, cyan, purple, orange;
     private void Start()
@@ -17,7 +18,8 @@ public class LampControl : MonoBehaviour
         CheckColor(color);
         if (red && yellow && green && blue && cyan && purple && orange)
         {
-            transform.Find("White").gameObject.SetActive(true);
+            White.SetActive(true);
+            gameObject.SetActive(false);
         }
     }
     public void CheckColor(Game.Color.MyColor color)

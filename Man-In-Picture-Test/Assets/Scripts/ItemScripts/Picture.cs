@@ -56,8 +56,11 @@ public class Picture : MonoBehaviour
             case Game.Color.MyColor.BLACK:
                 transform.GetComponent<Image>().color = UnityEngine.Color.gray;
                 break;
-            case Game.Color.MyColor.NOCOLOR:
+            case Game.Color.MyColor.WHITE:
                 transform.GetComponent<Image>().color = UnityEngine.Color.white;
+                break;
+            case Game.Color.MyColor.NOCOLOR:
+                transform.GetComponent<Image>().color = UnityEngine.Color.gray;
                 break;
             default:
                 break;
