@@ -88,7 +88,7 @@ public class CanvasControl : MonoBehaviour
                 Debug.Log(results[0].gameObject.name);
                 if (ColorSystem.palette == Game.Color.MyColor.NOCOLOR)
                 {
-                    if (results[0].gameObject.GetComponent<Game.Color>().canBeSet && !results[0].gameObject.GetComponent<Game.Color>().canBeGet)
+                    if (results[0].gameObject.GetComponent<Game.Color>() != null && results[0].gameObject.GetComponent<Game.Color>().canBeSet && !results[0].gameObject.GetComponent<Game.Color>().canBeGet)
                     {
                         Cursor.SetCursor(cursorTexture_1, hotSpot, cursorMode);
                     }
@@ -99,7 +99,7 @@ public class CanvasControl : MonoBehaviour
                 }
                 else
                 {
-                    if (results[0].gameObject.GetComponent<Game.Color>().canBeGet && !results[0].gameObject.GetComponent<Game.Color>().canBeSet)
+                    if (results[0].gameObject.GetComponent<Game.Color>() != null && results[0].gameObject.GetComponent<Game.Color>().canBeGet && !results[0].gameObject.GetComponent<Game.Color>().canBeSet)
                     {
                         Cursor.SetCursor(null, hotSpot, cursorMode);
                     }
@@ -129,7 +129,10 @@ public class CanvasControl : MonoBehaviour
             case Game.Color.MyColor.RED:
                 UI.color = UnityEngine.Color.red;
                 break;
-            case Game.Color.MyColor.WALL:
+            case Game.Color.MyColor.ORANGE:
+                UI.color = UnityEngine.Color.red;
+                break;
+            case Game.Color.MyColor.CYAN:
                 UI.color = UnityEngine.Color.cyan;
                 break;
             case Game.Color.MyColor.BLUE:

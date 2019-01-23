@@ -109,8 +109,17 @@ public class ColorSystem : MonoBehaviour
             case Game.Color.MyColor.RED:
                 player.GetComponent<SpriteRenderer>().color = UnityEngine.Color.red;
                 break;
-            case Game.Color.MyColor.WALL:
+            case Game.Color.MyColor.CYAN:
                 player.GetComponent<SpriteRenderer>().color = UnityEngine.Color.cyan;
+                break;
+            case Game.Color.MyColor.GREEN:
+                player.GetComponent<SpriteRenderer>().color = UnityEngine.Color.green;
+                break;
+            case Game.Color.MyColor.PURPLE:
+                player.GetComponent<SpriteRenderer>().color = Game.Color.Purple;
+                break;
+            case Game.Color.MyColor.ORANGE:
+                player.GetComponent<SpriteRenderer>().color = Game.Color.Orange;
                 break;
             case Game.Color.MyColor.BLUE:
                 player.GetComponent<SpriteRenderer>().color = UnityEngine.Color.blue;

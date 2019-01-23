@@ -45,7 +45,7 @@ public class CageControl : MonoBehaviour
             case Game.Color.MyColor.RED:
                 transform.GetComponent<SpriteRenderer>().color = UnityEngine.Color.red;
                 break;
-            case Game.Color.MyColor.WALL:
+            case Game.Color.MyColor.CYAN:
                 transform.GetComponent<SpriteRenderer>().color = UnityEngine.Color.cyan;
                 break;
             case Game.Color.MyColor.BLUE:

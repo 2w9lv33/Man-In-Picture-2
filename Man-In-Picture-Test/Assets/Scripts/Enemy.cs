@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         //enemy_Rigidbody2D = GetComponent<Rigidbody2D>();
-        checkPoint = new Vector3(8, 0, 0);
+        checkPoint = new Vector3(13.5f, 0, 0);
     }
 
     private void Start()
