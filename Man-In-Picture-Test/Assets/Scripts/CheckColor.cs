@@ -8,8 +8,8 @@ public class CheckColor : MonoBehaviour
     {
         if(this.GetComponent<Game.Color>().myColor == this.GetComponent<Game.Color>().checkColor)
         {
-            this.transform.Find("Room_1").gameObject.SetActive(false);
-            this.transform.Find("Room_2").gameObject.SetActive(true);
+            transform.parent.transform.Find("Room_1").gameObject.SetActive(false);
+            transform.parent.transform.Find("Room_2").gameObject.SetActive(true);
         }
     }
 }

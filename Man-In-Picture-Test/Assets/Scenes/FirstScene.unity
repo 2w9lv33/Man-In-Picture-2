@@ -597,7 +597,7 @@ MonoBehaviour:
   canBeGet: 1
   canBeSet: 0
   _same: 0
-  _myColor: 5
+  _myColor: 4
   _checkColor: 2
 --- !u!114 &281325797
 MonoBehaviour:
@@ -702,11 +702,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59d664793a77a8a4097a7662f21aa153, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBeGet: 1
+  canBeGet: 0
   canBeSet: 1
   _same: 0
-  _myColor: 6
-  _checkColor: 3
+  _myColor: 5
+  _checkColor: 2
 --- !u!114 &307211539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1138,7 +1138,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: 0b5120763d2380044bb4ec9537c0fa2b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1337,8 +1337,8 @@ MonoBehaviour:
   canBeGet: 1
   canBeSet: 1
   _same: 0
-  _myColor: 2
-  _checkColor: 4
+  _myColor: 10
+  _checkColor: 3
 --- !u!1 &457719390
 GameObject:
   m_ObjectHideFlags: 0
@@ -1543,8 +1543,8 @@ MonoBehaviour:
   canBeGet: 1
   canBeSet: 1
   _same: 0
-  _myColor: 6
-  _checkColor: 4
+  _myColor: 5
+  _checkColor: 3
 --- !u!1 &562288216
 GameObject:
   m_ObjectHideFlags: 0
@@ -2309,8 +2309,8 @@ MonoBehaviour:
   canBeGet: 1
   canBeSet: 1
   _same: 0
-  _myColor: 4
-  _checkColor: 5
+  _myColor: 3
+  _checkColor: 4
 --- !u!1 &823481774
 GameObject:
   m_ObjectHideFlags: 0
@@ -2837,7 +2837,7 @@ PrefabInstance:
     - target: {fileID: 8920294134139120675, guid: 34a0fadca3c0e914eb7a1ef2c6cbf04c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.73
+      value: -3.99
       objectReference: {fileID: 0}
     - target: {fileID: 8920294134139120675, guid: 34a0fadca3c0e914eb7a1ef2c6cbf04c,
         type: 3}
@@ -3875,8 +3875,8 @@ MonoBehaviour:
   canBeGet: 1
   canBeSet: 1
   _same: 0
-  _myColor: 5
-  _checkColor: 6
+  _myColor: 4
+  _checkColor: 5
 --- !u!1 &1734271199
 GameObject:
   m_ObjectHideFlags: 0
@@ -4626,7 +4626,7 @@ MonoBehaviour:
   canBeGet: 1
   canBeSet: 0
   _same: 0
-  _myColor: 3
+  _myColor: 2
   _checkColor: 2
 --- !u!1 &1906919086
 GameObject:
@@ -5352,14 +5352,9 @@ PrefabInstance:
     - target: {fileID: 7313941433937922223, guid: 87252ef53be9acc479dea46801396270,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7313941433937922223, guid: 87252ef53be9acc479dea46801396270,
-        type: 3}
-      propertyPath: m_TagString
-      value: Item
-      objectReference: {fileID: 0}
-    - target: {fileID: 7313941433174025208, guid: 87252ef53be9acc479dea46801396270,
         type: 3}
       propertyPath: m_TagString
       value: Item
@@ -5418,6 +5413,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7313941433174025208, guid: 87252ef53be9acc479dea46801396270,
+        type: 3}
+      propertyPath: m_TagString
+      value: Item
       objectReference: {fileID: 0}
     - target: {fileID: 7313941433757194114, guid: 87252ef53be9acc479dea46801396270,
         type: 3}

@@ -5,12 +5,15 @@ using UnityEngine;
 public class HideManControl : MonoBehaviour
 {
     public Game.Color en1, en2;
+    public Sprite Texture2D;
+    public SpriteRenderer room;
     private void Update()
     {
         if (en1.myColor == Game.Color.MyColor.WHITE && en2.myColor == Game.Color.MyColor.WHITE)
         {
             transform.Find("Hideman_1").gameObject.SetActive(false);
             transform.Find("Hideman_2").gameObject.SetActive(true);
+            room.sprite = Texture2D;
         }
     }
 }

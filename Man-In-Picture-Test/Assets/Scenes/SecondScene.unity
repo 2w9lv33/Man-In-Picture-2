@@ -443,7 +443,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 0d405db63baf09d4789b51f5c9498d0c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 557d7f58c51e465409b145eb5826977a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2014,6 +2014,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   en1: {fileID: 589852920}
   en2: {fileID: 1763918608}
+  Texture2D: {fileID: 21300000, guid: 54ff83e53f01e4e49acf658a0c2ecfb5, type: 3}
+  room: {fileID: 88976565}
 --- !u!1 &689717511
 GameObject:
   m_ObjectHideFlags: 0
@@ -2915,7 +2917,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: de8637c778044284a8063c33e5cf22a5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 337faccf21c6b3042a77215f21f0e289, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4312,7 +4314,7 @@ PrefabInstance:
     - target: {fileID: 8920294134139120675, guid: 34a0fadca3c0e914eb7a1ef2c6cbf04c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.47
+      value: 17.9
       objectReference: {fileID: 0}
     - target: {fileID: 8920294134139120675, guid: 34a0fadca3c0e914eb7a1ef2c6cbf04c,
         type: 3}
@@ -4447,7 +4449,7 @@ PrefabInstance:
     - target: {fileID: 9097203581593699483, guid: 34a0fadca3c0e914eb7a1ef2c6cbf04c,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8909605306815381617, guid: 34a0fadca3c0e914eb7a1ef2c6cbf04c,
         type: 3}
