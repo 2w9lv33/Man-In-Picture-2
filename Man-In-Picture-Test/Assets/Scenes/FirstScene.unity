@@ -454,7 +454,7 @@ MonoBehaviour:
   animator: {fileID: 1936664645}
   Use: 0
   IsUILayer: 0
-  palette: 2
+  palette: 1
 --- !u!4 &276511484
 Transform:
   m_ObjectHideFlags: 0
@@ -1864,11 +1864,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59d664793a77a8a4097a7662f21aa153, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBeGet: 1
+  canBeGet: 0
   canBeSet: 1
   _same: 0
-  _myColor: 2
-  _checkColor: 1
+  _myColor: 1
+  _checkColor: 0
 --- !u!114 &621021450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2937,12 +2937,27 @@ PrefabInstance:
     - target: {fileID: 9097203581593699483, guid: 34a0fadca3c0e914eb7a1ef2c6cbf04c,
         type: 3}
       propertyPath: m_MaskInteraction
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9097203581593699483, guid: 34a0fadca3c0e914eb7a1ef2c6cbf04c,
         type: 3}
       propertyPath: m_SortingOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909605306815381617, guid: 34a0fadca3c0e914eb7a1ef2c6cbf04c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7886445057257410308, guid: 34a0fadca3c0e914eb7a1ef2c6cbf04c,
+        type: 3}
+      propertyPath: _myColor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7886445057257410308, guid: 34a0fadca3c0e914eb7a1ef2c6cbf04c,
+        type: 3}
+      propertyPath: canBeSet
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34a0fadca3c0e914eb7a1ef2c6cbf04c, type: 3}
@@ -3879,7 +3894,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1734271200
 Transform:
   m_ObjectHideFlags: 0
