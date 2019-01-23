@@ -7,6 +7,7 @@ public class PlayerMove : MonoBehaviour
     public PlayerController playerController;
     public ColorSystem ColorSystem;
     public Animator animator;
+    public Animator animator2;
     [SerializeField] private float playerSpeed = 10f;
     public float moveVelocity = 0f;
     public bool onUILayer = false;
@@ -18,10 +19,12 @@ public class PlayerMove : MonoBehaviour
             mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             moveVelocity = (mousePosition.x > transform.position.x ? 1 : -1) * playerSpeed;
             animator.SetFloat("Speed", Mathf.Abs(moveVelocity));
+            animator2.SetFloat("Speed", Mathf.Abs(moveVelocity));
         }
         if (Mathf.Abs(mousePosition.x - transform.position.x) < 0.1f && playerController.canMove)
         {
             animator.SetFloat("Speed", -5f);
+            animator2.SetFloat("Speed", -5f);
             moveVelocity = 0f;
         }
     }
@@ -42,6 +45,7 @@ public class PlayerMove : MonoBehaviour
     {
         mousePosition = transform.position;
         animator.SetFloat("Speed", -5f);
+        animator2.SetFloat("Speed", -5f);
         moveVelocity = 0f;
     }
 
@@ -86,6 +90,11 @@ public class PlayerMove : MonoBehaviour
     {
         animator.SetBool("Get", false);
         animator.SetBool("Using", true);
+    }
+
+    public void SetOnlyGetFalse()
+    {
+        animator.SetBool("OnlyGet", false);
     }
 
     public void LoadFirstScene()

@@ -14,12 +14,16 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public bool awakeEnemy = false;
 
     private Rigidbody2D player_Rigidbody2D;
-    private bool player_FacingRight = true;
+    public bool player_FacingRight = true;
     private Vector3 player_Velocity = Vector3.zero;
 
     private void Awake()
     {
         player_Rigidbody2D = GetComponent<Rigidbody2D>();
+        if (!player_FacingRight)
+        {
+            Flip();
+        }
     }
 
     private void Update()
@@ -54,7 +58,7 @@ public class PlayerController : MonoBehaviour
         this.transform.localScale = playerScale;
     }
 
-    public  void ChangePlayer(int type)
+    public void ChangePlayer(int type)
     {
         switch (type)
         {

@@ -456,6 +456,7 @@ MonoBehaviour:
   IsUILayer: 0
   spriteMask: {fileID: 1936664655}
   palette: 1
+  player2: {fileID: 0}
 --- !u!4 &276511484
 Transform:
   m_ObjectHideFlags: 0
@@ -1947,6 +1948,7 @@ MonoBehaviour:
   bigman: {fileID: 1103145399}
   SpriteMask: {fileID: 621021451}
   Player: {fileID: 1936664644}
+  PlayerController: {fileID: 1936664649}
 --- !u!1 &627543739
 GameObject:
   m_ObjectHideFlags: 0

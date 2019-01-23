@@ -10,7 +10,7 @@ public class CageControl : MonoBehaviour
     public GameObject bigman;
     public SpriteMask SpriteMask;
     public GameObject Player;
-    
+    public PlayerController PlayerController;
 
     // Start is called before the first frame update
     void Start()
@@ -76,7 +76,7 @@ public class CageControl : MonoBehaviour
     public void Unshowkey()
     {
         GameObject.Find("key").GetComponent<SpriteRenderer>().enabled = false;
-
+        PlayerController.ChangePlayer(1);
     }
 
 }

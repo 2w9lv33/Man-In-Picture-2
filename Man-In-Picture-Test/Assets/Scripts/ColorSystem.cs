@@ -15,6 +15,7 @@ public class ColorSystem : MonoBehaviour
     public bool IsUILayer = false;
     public SpriteMask spriteMask;
     [SerializeField] public Game.Color.MyColor palette;
+    public SpriteRenderer player2;
 
     private void Update()
     {
@@ -158,13 +159,15 @@ public class ColorSystem : MonoBehaviour
 
     public void colorfulOn()
     {
+        player2.enabled = true;
         spriteMask.enabled = true;
         player.GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.VisibleOutsideMask;
     }
 
     public void colorfulOff()
     {
+        player2.enabled = false;
         spriteMask.enabled = false;
-        player.GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.VisibleOutsideMask;
+        player.GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.None;
     }
 }
