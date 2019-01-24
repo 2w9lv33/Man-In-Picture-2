@@ -22,6 +22,7 @@ public class ColorSystem : MonoBehaviour
     {
         Click();
         OnClickGet();
+        OnClickSet();
         ChangePlayerColor(palette);
         IsUILayer = false;
     }
