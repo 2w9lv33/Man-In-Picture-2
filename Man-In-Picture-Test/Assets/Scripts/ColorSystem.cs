@@ -11,7 +11,8 @@ public class ColorSystem : MonoBehaviour
     public PlayerController PlayerController;
     public Animator animator;
     private Vector3 mousePosition;
-    [SerializeField]public bool Use = false;
+    [SerializeField]public bool Get = false;
+    public bool Set = false;
     public bool IsUILayer = false;
     public SpriteMask spriteMask;
     [SerializeField] public Game.Color.MyColor palette;
@@ -20,28 +21,40 @@ public class ColorSystem : MonoBehaviour
     private void Update()
     {
         Click();
-        OnClickUse();
+        OnClickGet();
         ChangePlayerColor(palette);
         IsUILayer = false;
     }
 
-    public void OnClickUse()
+    public void OnClickGet()
     {
-        if (Mathf.Abs(player.transform.position.x - mousePosition.x) < 3f && Use)
+        if (Mathf.Abs(player.transform.position.x - mousePosition.x) < 3f && Get)
         {
             GetColor(mousePosition);
-            Use = false;
+            Get = false;
             player.GetComponent<PlayerMove>().moveVelocity = 0f;
             animator.SetFloat("Speed", -5f);
         }
     }
+
+    public void OnClickSet()
+    {
+        if (Mathf.Abs(player.transform.position.x - mousePosition.x) < 3f && Set)
+        {
+            SetColor(mousePosition);
+            Set = false;
+            player.GetComponent<PlayerMove>().moveVelocity = 0f;
+            animator.SetFloat("Speed", -5f);
+        }
+    }
+
     public void Click()
     {
         if (palette == Game.Color.MyColor.NOCOLOR && IsItem(Camera.main.ScreenToWorldPoint(Input.mousePosition)))
         {
             if (Input.GetMouseButtonDown(0) && !IsUILayer)
             {
-                Use = true;
+                Get = true;
                 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             }
         }
@@ -49,7 +62,7 @@ public class ColorSystem : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0) && !IsUILayer)
             {
-                Use = true;
+                Set = true;
                 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             }
         }
