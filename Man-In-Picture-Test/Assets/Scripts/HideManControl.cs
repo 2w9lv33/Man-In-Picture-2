@@ -8,7 +8,7 @@ public class HideManControl : MonoBehaviour
     public SpriteRenderer Paint;
     public Color Color = Color.clear;
     public GameObject room1, room2;
-    private Vector3 down = new Vector3(0, -1, 0);
+    private Vector3 down = new Vector3(0, -2, 0);
     private bool isChecked = false;
     public bool flag = false;
 
@@ -24,7 +24,7 @@ public class HideManControl : MonoBehaviour
         Color = Paint.color;
         if (Color.a < 0.8)
         {
-            Color.a += 0.001f;
+            Color.a += 0.004f;
             Paint.color = Color;
             Paint.transform.position += down * Time.deltaTime;
         }
@@ -34,7 +34,7 @@ public class HideManControl : MonoBehaviour
             room1.SetActive(false);
             room2.SetActive(true);
             Paint.color = Color.clear;
-            Invoke("LoadScene", 3f);
+            Invoke("LoadScene", 1f);
         }
     }
 

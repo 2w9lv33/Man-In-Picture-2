@@ -10,6 +10,9 @@ public class BackgroundRUN : MonoBehaviour
     private Vector3 dis;
     private Vector3 speed;
     private Vector3 Min;
+
+    public bool flag = true;
+
     private void Start()
     {
         dis = room_2.transform.position - room_1.transform.position;
@@ -21,8 +24,11 @@ public class BackgroundRUN : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Run();
-        if(front.transform.position.x > 20)
+        if (flag)
+        {
+            Run();
+        }
+        if(front.transform.position.x > 15)
         {
             front = room_1;
             room_1 = room_2;
