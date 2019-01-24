@@ -20,10 +20,21 @@ public class ColorSystem : MonoBehaviour
     private void Update()
     {
         Click();
+        OnClickUse();
         ChangePlayerColor(palette);
         IsUILayer = false;
     }
 
+    public void OnClickUse()
+    {
+        if (Mathf.Abs(player.transform.position.x - mousePosition.x) < 3f && Use)
+        {
+            GetColor(mousePosition);
+            Use = false;
+            player.GetComponent<PlayerMove>().moveVelocity = 0f;
+            animator.SetFloat("Speed", -5f);
+        }
+    }
     public void Click()
     {
         if (palette == Game.Color.MyColor.NOCOLOR && IsItem(Camera.main.ScreenToWorldPoint(Input.mousePosition)))
@@ -33,13 +44,6 @@ public class ColorSystem : MonoBehaviour
                 Use = true;
                 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             }
-            if (Mathf.Abs(player.transform.position.x - mousePosition.x) < 3f && Use)
-            {
-                GetColor(mousePosition);
-                Use = false;
-                player.GetComponent<PlayerMove>().moveVelocity = 0f;
-                animator.SetFloat("Speed", -5f);
-            }
         }
         if (palette != Game.Color.MyColor.NOCOLOR && IsItem(Camera.main.ScreenToWorldPoint(Input.mousePosition)))
         {
@@ -47,13 +51,6 @@ public class ColorSystem : MonoBehaviour
             {
                 Use = true;
                 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            }
-            if (Mathf.Abs(player.transform.position.x - mousePosition.x) < 3f && Use)
-            {
-                SetColor(mousePosition);
-                Use = false;
-                player.GetComponent<PlayerMove>().moveVelocity = 0f;
-                animator.SetFloat("Speed", -5f);
             }
         }
     }
