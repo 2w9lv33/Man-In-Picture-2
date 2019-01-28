@@ -464,7 +464,8 @@ MonoBehaviour:
   player: {fileID: 1936664644}
   PlayerController: {fileID: 1936664649}
   animator: {fileID: 1936664645}
-  Use: 0
+  Get: 0
+  Set: 0
   IsUILayer: 0
   spriteMask: {fileID: 1936664655}
   palette: 1
@@ -2061,7 +2062,7 @@ MonoBehaviour:
   canBeGet: 1
   canBeSet: 0
   _same: 0
-  _myColor: 1
+  _myColor: 0
   _checkColor: 2
 --- !u!61 &645085019
 BoxCollider2D:
@@ -2884,6 +2885,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1066356234, guid: 34a0fadca3c0e914eb7a1ef2c6cbf04c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1066356234, guid: 34a0fadca3c0e914eb7a1ef2c6cbf04c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3177845147797642665, guid: 34a0fadca3c0e914eb7a1ef2c6cbf04c,
         type: 3}
       propertyPath: canBeSeen
@@ -2892,7 +2901,7 @@ PrefabInstance:
     - target: {fileID: 8920294134139120675, guid: 34a0fadca3c0e914eb7a1ef2c6cbf04c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.09
+      value: -4.16
       objectReference: {fileID: 0}
     - target: {fileID: 8920294134139120675, guid: 34a0fadca3c0e914eb7a1ef2c6cbf04c,
         type: 3}
@@ -3233,7 +3242,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1394993712
 Transform:
   m_ObjectHideFlags: 0
@@ -5356,7 +5365,7 @@ MonoBehaviour:
   room: {fileID: 1959913797}
   Enemy: {fileID: 34704688}
   ColorSystem: {fileID: 276511483}
-  trap: {fileID: 281325792}
+  trapbefore: {fileID: 363397076}
   trap2: {fileID: 834993109}
 --- !u!1001 &7313941434288075008
 PrefabInstance:
@@ -5376,6 +5385,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7313941433937922223, guid: 87252ef53be9acc479dea46801396270,
+        type: 3}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
+    - target: {fileID: 7313941433174025208, guid: 87252ef53be9acc479dea46801396270,
         type: 3}
       propertyPath: m_TagString
       value: Item
@@ -5435,11 +5449,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7313941433174025208, guid: 87252ef53be9acc479dea46801396270,
-        type: 3}
-      propertyPath: m_TagString
-      value: Item
-      objectReference: {fileID: 0}
     - target: {fileID: 7313941433757194115, guid: 87252ef53be9acc479dea46801396270,
         type: 3}
       propertyPath: m_SortingOrder
@@ -5479,6 +5488,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 68201450, guid: 87252ef53be9acc479dea46801396270, type: 3}
+      propertyPath: _myColor
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7313941433757194113, guid: 87252ef53be9acc479dea46801396270, type: 3}
