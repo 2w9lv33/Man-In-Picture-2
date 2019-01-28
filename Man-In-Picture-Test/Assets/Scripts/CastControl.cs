@@ -7,24 +7,24 @@ public class CastControl : MonoBehaviour
     public Transform enemy, player;
     public PlayerRun PlayerRun;
     public Vector3  temp,destination;
-    private float time, num;
-    private bool flag = false;
+    private float time;
+    private int num;
+    private bool flag,die = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        num = Random.Range(1, 3);
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        enemy = GameObject.FindGameObjectWithTag("Enemy").transform;
+        PlayerRun = player.transform.GetComponent<PlayerRun>();
+        num = Random.Range(1, 4);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (flag)
-        {
-            num = Random.Range(1, 3);
-        }
         time += Time.deltaTime*5;
-        Cast(1,time);
+        Cast(num,time);
     }
 
     public void Cast(int num,float time)
@@ -63,8 +63,18 @@ public class CastControl : MonoBehaviour
         }
         if (time > enemy.position.x - dst.x)
         {
+            flag = true;
             time = 0;
-            Destroy(this);
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Player")
+        {
+            player.GetComponent<Animator>().SetBool("die", true);
+            player.GetComponent<PlayerRun>().die = true;
         }
     }
 }

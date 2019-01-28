@@ -14,7 +14,7 @@ public class HideManControl : MonoBehaviour
 
     private void Update()
     {
-        if (/*en1.myColor == Game.Color.MyColor.WHITE && en2.myColor == Game.Color.MyColor.WHITE &&*/ flag)
+        if (en1.myColor == Game.Color.MyColor.WHITE && en2.myColor == Game.Color.MyColor.WHITE && flag)
         {
             LerpColor();
         }
@@ -40,12 +40,12 @@ public class HideManControl : MonoBehaviour
 
     public void LoadScene()
     {
-        AsynLoad.LoadScene("ThirdScene");
+        AsynLoad.LoadScene("AfterSecond");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(/*en1.myColor == Game.Color.MyColor.WHITE && en2.myColor == Game.Color.MyColor.WHITE &&*/ collision.name == "Player" && !isChecked)
+        if(en1.myColor == Game.Color.MyColor.WHITE && en2.myColor == Game.Color.MyColor.WHITE && collision.name == "Player" && !isChecked)
         {
             transform.Find("Hideman_1").gameObject.SetActive(false);
             transform.Find("Hideman_2").gameObject.SetActive(true);

@@ -12,12 +12,27 @@ EditorBuildSettings:
     path: Assets/Scenes/TeachScene.unity
     guid: 2a735009e9f56df42a64104a99b6e4fb
   - enabled: 1
+    path: Assets/Scenes/AfterTeach.unity
+    guid: 8dd753be881dcf0408047b7eb1093fbd
+  - enabled: 1
     path: Assets/Scenes/FirstScene.unity
     guid: e203dae4ad8c2cc489b9ee828017e770
+  - enabled: 1
+    path: Assets/Scenes/AfterFirst.unity
+    guid: ccecfb579dada19449e26947ee2cfcb8
   - enabled: 1
     path: Assets/Scenes/SecondScene.unity
     guid: ce88ed4ab4830b642831ba789528d01c
   - enabled: 1
+    path: Assets/Scenes/AfterSceond.unity
+    guid: 8545d487e9e605640add8a7810d35332
+  - enabled: 1
     path: Assets/Scenes/ThirdScene.unity
     guid: ec3909def2dcb174db4e71a30eb91b43
+  - enabled: 1
+    path: Assets/Scenes/LastScene.unity
+    guid: 090f1c157577fab489fabfd96ff6042f
+  - enabled: 1
+    path: Assets/Scenes/End.unity
+    guid: 945774d877bb5f7429560dba9f61b3f4
   m_configObjects: {}

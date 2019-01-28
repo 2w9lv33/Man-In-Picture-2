@@ -60,13 +60,13 @@ public class DoorControl : MonoBehaviour
         door.SetBool("Open", false);
     }
 
-    public void LoadFirstScene()
+    public void LoadComicSceneFirst()
     {
-        AsynLoad.LoadSceneAsync("FirstScene");
+        AsynLoad.LoadSceneAsync("AfterTeach");
     }
 
-    public void LoadSecondScene()
+    public void LoadComicSceneSecond()
     {
-        AsynLoad.LoadSceneAsync("SecondScene");
+        AsynLoad.LoadSceneAsync("AfterFirst");
     }
 }

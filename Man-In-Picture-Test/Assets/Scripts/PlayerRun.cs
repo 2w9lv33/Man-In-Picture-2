@@ -6,9 +6,10 @@ public class PlayerRun : MonoBehaviour
 {
     public Animator Player,Enemy;
     public BackgroundRUN BackgroundRUN;
-    public Game.Color bookCase;
+    public Game.Color bookCase1 , bookCase2;
+    public bool reload,die = false;
     [SerializeField] public Vector3 maxP, minP, midP;
-    public Vector3 now;
+    private Vector3 now;
     private Vector3 mousePos = Vector3.zero;
 
     private void Start()
@@ -20,8 +21,13 @@ public class PlayerRun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (die)
+        {
+            transform.position += new Vector3(0.08f, 0, 0);
+            Invoke("Reload", 1f);
+        }
         now = transform.position;
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !IsItem(Camera.main.ScreenToWorldPoint(Input.mousePosition)))
         {
             mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Debug.Log(mousePos);
@@ -55,12 +61,43 @@ public class PlayerRun : MonoBehaviour
                 }
             }
         }
-        if(bookCase.myColor == Game.Color.MyColor.BLACK)
+        if(bookCase2.myColor == Game.Color.MyColor.BLACK || bookCase1.myColor == Game.Color.MyColor.BLACK)
         {
-            BackgroundRUN.flag = false;
-            //Player.SetBool("Stand", true);
-            //Enemy.SetBool("Stand", true);
+            Invoke("LoadLastScene", 2f);
         }
+    }
+
+    public void Reload()
+    {
+        AsynLoad.LoadScene("ThirdScene");
+    }
+
+    public void LoadLastScene()
+    {
+        AsynLoad.LoadScene("LastScene");
+    }
+
+    public bool IsItem(Vector3 mousePosition)
+    {
+        RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
+        if (hit.collider != null)
+        {
+            if (hit.transform.tag == "Item")
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void SetDieFalse()
+    {
+        Player.SetBool("die", true);
+    }
+
+    public void LoadLastSecne()
+    {
+        AsynLoad.LoadScene("ThirdScene");
     }
 
     public void SetUseFalse()
