@@ -7,7 +7,8 @@ public class PlayerRun : MonoBehaviour
     public Animator Player,Enemy;
     public BackgroundRUN BackgroundRUN;
     public Game.Color bookCase;
-    [SerializeField]private Vector3 maxP,minP,midP,now;
+    [SerializeField] public Vector3 maxP, minP, midP;
+    public Vector3 now;
     private Vector3 mousePos = Vector3.zero;
 
     private void Start()
