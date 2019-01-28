@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     public bool player_FacingRight = true;
     private Vector3 player_Velocity = Vector3.zero;
 
+    public bool secondClear = false;
+
     private void Awake()
     {
         player_Rigidbody2D = GetComponent<Rigidbody2D>();

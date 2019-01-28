@@ -11,7 +11,7 @@ public class Enemy3 : MonoBehaviour
 
     private void Update()
     {
-        if(time < 3.2f)
+        if(time < 5.2f)
         {
             time += Time.deltaTime;
         }

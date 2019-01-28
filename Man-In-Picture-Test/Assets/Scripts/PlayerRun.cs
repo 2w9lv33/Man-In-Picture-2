@@ -11,12 +11,16 @@ public class PlayerRun : MonoBehaviour
     [SerializeField] public Vector3 maxP, minP, midP;
     private Vector3 now;
     private Vector3 mousePos = Vector3.zero;
+    private Vector3 clickPos = Vector3.zero;
+    private Vector3 dst = Vector3.zero;
+    private float speed = 0f;
 
     private void Start()
     {
         midP = transform.position;
         maxP = transform.position + new Vector3(-4, 0, 0);
         minP = transform.position + new Vector3(4, 0, 0);
+        mousePos = midP;
     }
     // Update is called once per frame
     void Update()
@@ -27,43 +31,37 @@ public class PlayerRun : MonoBehaviour
             Invoke("Reload", 1f);
         }
         now = transform.position;
-        if (Input.GetMouseButtonDown(0) && !IsItem(Camera.main.ScreenToWorldPoint(Input.mousePosition)))
+        MoveTo(mousePos);
+        if (Input.GetMouseButtonDown(0))
         {
-            mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Debug.Log(mousePos);
-            if (Mathf.Abs(now.x-maxP.x)< 0.2f)
+            clickPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            if(clickPos.x - now.x>0f)
             {
-                if (mousePos.x > now.x)
-                {
-                    Debug.Log("max to mid");
-                    transform.position = midP;
-                }
+                mousePos = minP;
             }
-            if (Mathf.Abs(now.x - minP.x) < 0.2f)
+            else
             {
-                if (mousePos.x < now.x)
-                {
-                    Debug.Log("min to mid");
-                    transform.position = midP;
-                }
-            }
-            if (Mathf.Abs(now.x - midP.x) < 0.2f)
-            {
-                if (mousePos.x > now.x)
-                {
-                    Debug.Log("mid to min");
-                    transform.position = minP;
-                }
-                else
-                {
-                    Debug.Log("mid to max");
-                    transform.position = maxP;
-                }
+                mousePos = maxP;
             }
         }
-        if(bookCase2.myColor == Game.Color.MyColor.BLACK || bookCase1.myColor == Game.Color.MyColor.BLACK)
+        if (bookCase2.myColor == Game.Color.MyColor.BLACK || bookCase1.myColor == Game.Color.MyColor.BLACK)
         {
             Invoke("LoadLastScene", 2f);
+        }
+    }
+
+    public void MoveTo(Vector3 pos)
+    {
+        if(Mathf.Abs(transform.position.x - pos.x) > 0.05f)
+        {
+            speed = (mousePos.x - midP.x > 0 ? 4 : -4);
+            dst.x = speed;
+            transform.GetComponent<Rigidbody2D>().velocity = dst;
+            Debug.Log("speed"+dst+"pos"+mousePos);
+        }
+        else
+        {
+            transform.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         }
     }
 

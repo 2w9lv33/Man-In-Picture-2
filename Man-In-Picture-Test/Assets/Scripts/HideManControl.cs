@@ -34,7 +34,7 @@ public class HideManControl : MonoBehaviour
             room1.SetActive(false);
             room2.SetActive(true);
             Paint.color = Color.clear;
-            Invoke("LoadScene", 1f);
+            //Invoke("LoadScene", 1f);
         }
     }
 
@@ -55,6 +55,7 @@ public class HideManControl : MonoBehaviour
             Invoke("HideP", 2);
             flag = true;
             isChecked = true;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().secondClear = true;
         }
     }
 

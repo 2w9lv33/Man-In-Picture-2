@@ -17,7 +17,12 @@ public class DoorControl : MonoBehaviour
                 player.SetActive(false);
                 door.SetBool("Open", true);
             }
-            if(transform.name == "Door_F")
+            if (transform.name == "Door_m" && player.transform.GetComponent<PlayerController>().secondClear)
+            {
+                player.SetActive(false);
+                door.SetBool("Open", true);
+            }
+            if (transform.name == "Door_F")
             {
                 player.SetActive(false);
                 door.SetBool("Open", true);
@@ -63,6 +68,11 @@ public class DoorControl : MonoBehaviour
     public void LoadComicSceneFirst()
     {
         AsynLoad.LoadSceneAsync("AfterTeach");
+    }
+
+    public void LoadComicSceneThird()
+    {
+        AsynLoad.LoadSceneAsync("AfterSecond");
     }
 
     public void LoadComicSceneSecond()

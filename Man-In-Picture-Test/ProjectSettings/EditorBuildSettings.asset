@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Scenes/SecondScene.unity
     guid: ce88ed4ab4830b642831ba789528d01c
   - enabled: 1
-    path: Assets/Scenes/AfterSceond.unity
+    path: Assets/Scenes/AfterSecond.unity
     guid: 8545d487e9e605640add8a7810d35332
   - enabled: 1
     path: Assets/Scenes/ThirdScene.unity

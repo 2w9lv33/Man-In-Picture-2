@@ -25,9 +25,8 @@ public class EnemyColor : MonoBehaviour
         {
             if (myColor == Game.Color.MyColor.WHITE)
             {
-                //transform.parent.transform.Find("after").gameObject.SetActive(true);
-                transform.GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.None;
-                transform.GetComponent<SpriteMask>().enabled = false;
+                transform.parent.Find("after").gameObject.SetActive(true);
+                transform.gameObject.SetActive(false);
             }
         }
         switch (myColor)

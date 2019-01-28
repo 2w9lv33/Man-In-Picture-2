@@ -18,6 +18,7 @@ public class ElecCanvasControl : MonoBehaviour
         if(Canvas.transform.Find("Fuze").GetComponent<Game.Color>().myColor == Game.Color.MyColor.YELLOW)
         {
             red.transform.Find("Light").gameObject.SetActive(true);
+            transform.Find("hint").gameObject.SetActive(false);
         }
     }
 

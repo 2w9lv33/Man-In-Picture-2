@@ -11,7 +11,6 @@ public class Light : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            Debug.Log("stay");
             shadow.underLight = true;
         }
     }
@@ -20,7 +19,6 @@ public class Light : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            Debug.Log("quit");
             shadow.underLight = false;
         }
     }
