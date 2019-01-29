@@ -8,6 +8,8 @@ public class ComicCamera : MonoBehaviour
     public GameObject comic;
     private int num,max = 0;
     private Vector3 position =Vector3.zero;
+    private Vector3 dir;
+    private bool flag = true;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -15,7 +17,8 @@ public class ComicCamera : MonoBehaviour
     }
     void Start()
     {
-        StartCoroutine(Movie());
+        //StartCoroutine(Movie());
+        transform.position = positions[num].position;
     }
 
     public IEnumerator Movie()
@@ -36,7 +39,22 @@ public class ComicCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (flag && max > 0)
+        {
+            dir = positions[num].position - transform.position;
+            flag = false;
+        }
+        else if(max == 0)
+        {
+            AsynLoad.LoadScene(comic.name);
+        }
+        transform.position += dir / 300;
+        if(max > 0 && Mathf.Abs(transform.position.y - positions[num].position.y) < 0.2f)
+        {
+            flag = true;
+            num++;
+            max--;
+        }
     }
 
     public void SetCamera(Vector3 vector3)
@@ -44,4 +62,5 @@ public class ComicCamera : MonoBehaviour
         vector3.z = -10;
         transform.position = vector3;
     }
+
 }

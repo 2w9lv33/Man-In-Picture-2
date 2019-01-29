@@ -43,25 +43,25 @@ public class CageControl : MonoBehaviour
         switch (color.myColor)
         {
             case Game.Color.MyColor.RED:
-                transform.GetComponent<SpriteRenderer>().color = UnityEngine.Color.red;
+                transform.GetComponent<SpriteRenderer>().color = Color.Lerp(transform.GetComponent<SpriteRenderer>().color, UnityEngine.Color.red, 0.02f);
                 break;
             case Game.Color.MyColor.CYAN:
-                transform.GetComponent<SpriteRenderer>().color = UnityEngine.Color.cyan;
+                transform.GetComponent<SpriteRenderer>().color = Color.Lerp(transform.GetComponent<SpriteRenderer>().color, UnityEngine.Color.cyan, 0.02f);
                 break;
             case Game.Color.MyColor.BLUE:
-                transform.GetComponent<SpriteRenderer>().color = UnityEngine.Color.blue;
+                transform.GetComponent<SpriteRenderer>().color = Color.Lerp(transform.GetComponent<SpriteRenderer>().color, UnityEngine.Color.blue, 0.02f);
                 break;
             case Game.Color.MyColor.YELLOW:
-                transform.GetComponent<SpriteRenderer>().color = UnityEngine.Color.yellow;
+                transform.GetComponent<SpriteRenderer>().color = Color.Lerp(transform.GetComponent<SpriteRenderer>().color, UnityEngine.Color.yellow, 0.02f);
                 break;
             case Game.Color.MyColor.BLACK:
-                transform.GetComponent<SpriteRenderer>().color = UnityEngine.Color.gray;
+                transform.GetComponent<SpriteRenderer>().color = Color.Lerp(transform.GetComponent<SpriteRenderer>().color, UnityEngine.Color.gray, 0.02f);
                 break;
             case Game.Color.MyColor.WHITE:
-                transform.GetComponent<Image>().color = UnityEngine.Color.white;
+                transform.GetComponent<SpriteRenderer>().color = Color.Lerp(transform.GetComponent<SpriteRenderer>().color, UnityEngine.Color.white, 0.02f);
                 break;
             case Game.Color.MyColor.NOCOLOR:
-                transform.GetComponent<SpriteRenderer>().color = UnityEngine.Color.gray;
+                transform.GetComponent<SpriteRenderer>().color = Color.Lerp(transform.GetComponent<SpriteRenderer>().color, UnityEngine.Color.gray, 0.02f);
                 break;
             default:
                 break;

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class ButtonControl : MonoBehaviour
 {
+    public GameObject title, play;
     public Image mask;
     public Animator artist,player;
     private bool flag = false;
@@ -27,5 +28,12 @@ public class ButtonControl : MonoBehaviour
         mask.gameObject.SetActive(false);
         artist.SetBool("draw", true);
         player.SetBool("awake", true);
+        title.SetActive(false);
+        play.SetActive(false);
+    }
+
+    public void Reload()
+    {
+        AsynLoad.LoadScene(transform.name);
     }
 }

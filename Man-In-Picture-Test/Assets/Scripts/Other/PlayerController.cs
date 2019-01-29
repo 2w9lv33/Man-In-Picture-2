@@ -48,8 +48,8 @@ public class PlayerController : MonoBehaviour
             {
                 Flip();
             }
-            Vector3 targetVelocity = new Vector2(move, player_Rigidbody2D.velocity.y);
-            player_Rigidbody2D.velocity = Vector3.SmoothDamp(player_Rigidbody2D.velocity, targetVelocity, ref player_Velocity, movementSmooth);
+            Vector3 targetVelocity = new Vector2(move*1.2f, player_Rigidbody2D.velocity.y);
+            player_Rigidbody2D.velocity = targetVelocity;
         }
     }
 

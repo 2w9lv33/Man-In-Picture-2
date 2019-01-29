@@ -43,6 +43,20 @@ public class LabControl : MonoBehaviour
                 images[1].GetComponent<Game.Color>().myColor = Game.Color.MyColor.GREEN;
             }
         }
+        if (images[2].GetComponent<Game.Color>().myColor == Game.Color.MyColor.YELLOW)
+        {
+            if (images[0].GetComponent<Game.Color>().myColor == Game.Color.MyColor.RED)
+            {
+                images[1].GetComponent<Game.Color>().myColor = Game.Color.MyColor.ORANGE;
+            }
+        }
+        if (images[2].GetComponent<Game.Color>().myColor == Game.Color.MyColor.RED)
+        {
+            if (images[0].GetComponent<Game.Color>().myColor == Game.Color.MyColor.YELLOW)
+            {
+                images[1].GetComponent<Game.Color>().myColor = Game.Color.MyColor.ORANGE;
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -29,7 +29,7 @@ public class ColorSystem : MonoBehaviour
 
     public void OnClickGet()
     {
-        if (Mathf.Abs(player.transform.position.x - mousePosition.x) < 3f && Get)
+        if (Mathf.Abs(player.transform.position.x - mousePosition.x) < 3f && Get && !Set)
         {
             GetColor(mousePosition);
             Get = false;
@@ -41,7 +41,7 @@ public class ColorSystem : MonoBehaviour
 
     public void OnClickSet()
     {
-        if (Mathf.Abs(player.transform.position.x - mousePosition.x) < 3f && Set)
+        if (Mathf.Abs(player.transform.position.x - mousePosition.x) < 3f && Set && !Get)
         {
             SetColor(mousePosition);
             Set = false;
@@ -55,7 +55,7 @@ public class ColorSystem : MonoBehaviour
     {
         if (palette == Game.Color.MyColor.NOCOLOR && IsItem(Camera.main.ScreenToWorldPoint(Input.mousePosition)))
         {
-            if (Input.GetMouseButtonDown(0) && !IsUILayer)
+            if (Input.GetMouseButtonDown(0) && !IsUILayer && !Set)
             {
                 Get = true;
                 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -63,7 +63,7 @@ public class ColorSystem : MonoBehaviour
         }
         if (palette != Game.Color.MyColor.NOCOLOR && IsItem(Camera.main.ScreenToWorldPoint(Input.mousePosition)))
         {
-            if (Input.GetMouseButtonDown(0) && !IsUILayer)
+            if (Input.GetMouseButtonDown(0) && !IsUILayer && !Get)
             {
                 Set = true;
                 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -124,43 +124,43 @@ public class ColorSystem : MonoBehaviour
         {
             case Game.Color.MyColor.RED:
                 colorfulOff();
-                player.GetComponent<SpriteRenderer>().color = UnityEngine.Color.red;
+                player.GetComponent<SpriteRenderer>().color = Color.Lerp(player.GetComponent<SpriteRenderer>().color, UnityEngine.Color.red,0.02f);
                 break;
             case Game.Color.MyColor.CYAN:
                 colorfulOff();
-                player.GetComponent<SpriteRenderer>().color = UnityEngine.Color.cyan;
+                player.GetComponent<SpriteRenderer>().color = Color.Lerp(player.GetComponent<SpriteRenderer>().color, UnityEngine.Color.cyan, 0.02f);
                 break;
             case Game.Color.MyColor.GREEN:
                 colorfulOff();
-                player.GetComponent<SpriteRenderer>().color = UnityEngine.Color.green;
+                player.GetComponent<SpriteRenderer>().color = Color.Lerp(player.GetComponent<SpriteRenderer>().color, UnityEngine.Color.green, 0.02f);
                 break;
             case Game.Color.MyColor.PURPLE:
                 colorfulOff();
-                player.GetComponent<SpriteRenderer>().color = Game.Color.Purple;
+                player.GetComponent<SpriteRenderer>().color = Color.Lerp(player.GetComponent<SpriteRenderer>().color, Game.Color.Purple, 0.02f);
                 break;
             case Game.Color.MyColor.ORANGE:
                 colorfulOff();
-                player.GetComponent<SpriteRenderer>().color = Game.Color.Orange;
+                player.GetComponent<SpriteRenderer>().color = Color.Lerp(player.GetComponent<SpriteRenderer>().color, Game.Color.Orange, 0.02f);
                 break;
             case Game.Color.MyColor.BLUE:
                 colorfulOff();
-                player.GetComponent<SpriteRenderer>().color = UnityEngine.Color.blue;
+                player.GetComponent<SpriteRenderer>().color = Color.Lerp(player.GetComponent<SpriteRenderer>().color, UnityEngine.Color.blue, 0.02f);
                 break;
             case Game.Color.MyColor.YELLOW:
                 colorfulOff();
-                player.GetComponent<SpriteRenderer>().color = UnityEngine.Color.yellow;
+                player.GetComponent<SpriteRenderer>().color = Color.Lerp(player.GetComponent<SpriteRenderer>().color, UnityEngine.Color.yellow, 0.02f);
                 break;
             case Game.Color.MyColor.BLACK:
                 colorfulOff();
-                player.GetComponent<SpriteRenderer>().color = UnityEngine.Color.gray;
+                player.GetComponent<SpriteRenderer>().color = Color.Lerp(player.GetComponent<SpriteRenderer>().color, UnityEngine.Color.gray, 0.02f);
                 break;
             case Game.Color.MyColor.NOCOLOR:
                 colorfulOff();
-                player.GetComponent<SpriteRenderer>().color = UnityEngine.Color.gray;
+                player.GetComponent<SpriteRenderer>().color = Color.Lerp(player.GetComponent<SpriteRenderer>().color, UnityEngine.Color.gray, 0.02f);
                 break;
             case Game.Color.MyColor.WHITE:
                 colorfulOff();
-                player.GetComponent<SpriteRenderer>().color = UnityEngine.Color.white;
+                player.GetComponent<SpriteRenderer>().color = Color.Lerp(player.GetComponent<SpriteRenderer>().color, UnityEngine.Color.white, 0.02f);
                 break;
             case Game.Color.MyColor.HASCOLOR:
                 Invoke("colorfulOn",2f);

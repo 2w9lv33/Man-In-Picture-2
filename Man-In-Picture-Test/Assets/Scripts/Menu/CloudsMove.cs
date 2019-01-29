@@ -6,14 +6,14 @@ using UnityEngine.UI;
 public class CloudsMove : MonoBehaviour
 {
     public Vector3 speed;
-    private Vector3 startPos = new Vector3(-800, 234, 0);
+    public Transform start;
 
     private void Update()
     {
         transform.position += speed;
         if(transform.position.x > 1200)
         {
-            transform.position = startPos;
+            transform.position = start.position;
         }
     }
 

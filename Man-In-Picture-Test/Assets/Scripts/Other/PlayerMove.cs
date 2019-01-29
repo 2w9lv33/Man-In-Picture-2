@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+
+    //public AudioSource audio;
+
     public PlayerController playerController;
     public ColorSystem ColorSystem;
     public Animator animator;
     public Animator animator2;
-    [SerializeField] private float playerSpeed = 10f;
+    [SerializeField] private float playerSpeed = 100f;
     public float moveVelocity = 0f;
     public bool onUILayer = false;
     public Vector3 mousePosition = Vector3.zero;
@@ -23,10 +26,10 @@ public class PlayerMove : MonoBehaviour
         if (Mathf.Abs(mousePosition.x - transform.position.x) < 0.1f && playerController.canMove)
         {
             animator.SetFloat("Speed", -5f);
-            animator2.SetFloat("Speed", -5f);
+            //animator2.SetFloat("Speed", -5f);
             moveVelocity = 0f;
         }
-        animator2.SetFloat("Speed", Mathf.Abs(moveVelocity));
+        //animator2.SetFloat("Speed", Mathf.Abs(moveVelocity));
     }
 
     private void FixedUpdate()
@@ -34,6 +37,7 @@ public class PlayerMove : MonoBehaviour
         if (!animator.GetBool("Using") && !animator.GetBool("Get"))
         {
             playerController.Move(moveVelocity);
+            //audio.Play();
         }
         else
         {
@@ -45,7 +49,7 @@ public class PlayerMove : MonoBehaviour
     {
         mousePosition = transform.position;
         animator.SetFloat("Speed", -5f);
-        animator2.SetFloat("Speed", -5f);
+        //animator2.SetFloat("Speed", -5f);
         moveVelocity = 0f;
     }
 

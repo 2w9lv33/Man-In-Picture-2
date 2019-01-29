@@ -7,6 +7,7 @@ public class PopControl : MonoBehaviour
     public Animator popAnimator;
     public GameObject player;
     public GameObject playerPop;
+    public ColorSystem colorSystem;
 
     private void Start()
     {
@@ -15,7 +16,7 @@ public class PopControl : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.name == "Player" && !player.transform.GetComponent<PlayerController>().withKey && !player.transform.GetComponent<PlayerController>().secondClear && !player.transform.GetComponent<PlayerController>().firstClear)
+        if (collision.name == "Player" && !player.transform.GetComponent<PlayerController>().withKey && !player.transform.GetComponent<PlayerController>().secondClear && colorSystem.palette != Game.Color.MyColor.HASCOLOR)
         {
             popAnimator.SetBool("Up", true);
             popAnimator.SetBool("Thinking", true);

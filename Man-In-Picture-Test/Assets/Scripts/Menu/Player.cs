@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public GameObject player;
+    public Transform end;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,9 +15,9 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.tag == "Player" && transform.position.x > 120f) 
+        if (transform.tag == "Player" && transform.position.x > end.position.x) 
         {
-            transform.position -= new Vector3(1, 0, 0);
+            transform.position -= new Vector3(4, 0, 0);
             Debug.Log(transform.position);
         }
         else
