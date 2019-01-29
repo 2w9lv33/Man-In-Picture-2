@@ -35,6 +35,7 @@ public class ColorSystem : MonoBehaviour
             Get = false;
             player.GetComponent<PlayerMove>().moveVelocity = 0f;
             animator.SetFloat("Speed", -5f);
+            //animator2.SetFloat("Speed", -5f);
         }
     }
 
@@ -46,6 +47,7 @@ public class ColorSystem : MonoBehaviour
             Set = false;
             player.GetComponent<PlayerMove>().moveVelocity = 0f;
             animator.SetFloat("Speed", -5f);
+            //animator2.SetFloat("Speed", -5f);
         }
     }
 
@@ -161,7 +163,7 @@ public class ColorSystem : MonoBehaviour
                 player.GetComponent<SpriteRenderer>().color = UnityEngine.Color.white;
                 break;
             case Game.Color.MyColor.HASCOLOR:
-                colorfulOn();
+                Invoke("colorfulOn",2f);
                 break;
             default:
                 break;

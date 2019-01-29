@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
 
     public void Load()
     {
-        AsynLoad.LoadScene("TeachScene");
+        AsynLoad.LoadScene("AfterMenu");
     }
 
     public void Appear()

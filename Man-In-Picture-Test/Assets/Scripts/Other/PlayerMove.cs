@@ -19,7 +19,6 @@ public class PlayerMove : MonoBehaviour
             mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             moveVelocity = (mousePosition.x > transform.position.x ? 1 : -1) * playerSpeed;
             animator.SetFloat("Speed", Mathf.Abs(moveVelocity));
-            animator2.SetFloat("Speed", Mathf.Abs(moveVelocity));
         }
         if (Mathf.Abs(mousePosition.x - transform.position.x) < 0.1f && playerController.canMove)
         {
@@ -27,6 +26,7 @@ public class PlayerMove : MonoBehaviour
             animator2.SetFloat("Speed", -5f);
             moveVelocity = 0f;
         }
+        animator2.SetFloat("Speed", Mathf.Abs(moveVelocity));
     }
 
     private void FixedUpdate()

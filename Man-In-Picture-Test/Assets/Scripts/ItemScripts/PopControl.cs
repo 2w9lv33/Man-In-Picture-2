@@ -15,7 +15,7 @@ public class PopControl : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.name == "Player" && !player.transform.GetComponent<PlayerController>().withKey && !player.transform.GetComponent<PlayerController>().secondClear)
+        if(collision.name == "Player" && !player.transform.GetComponent<PlayerController>().withKey && !player.transform.GetComponent<PlayerController>().secondClear && !player.transform.GetComponent<PlayerController>().firstClear)
         {
             popAnimator.SetBool("Up", true);
             popAnimator.SetBool("Thinking", true);

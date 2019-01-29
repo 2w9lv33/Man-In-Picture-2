@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
 
     public bool secondClear = false;
 
+    public bool firstClear = false;
+
     private void Awake()
     {
         player_Rigidbody2D = GetComponent<Rigidbody2D>();
