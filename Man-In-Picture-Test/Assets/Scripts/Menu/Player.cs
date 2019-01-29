@@ -5,7 +5,9 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public GameObject player;
+    public GameObject pen;
     public Transform end;
+    public AudioSource get,drop;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,12 +34,19 @@ public class Player : MonoBehaviour
 
     public void Load()
     {
-        AsynLoad.LoadScene("AfterMenu");
+         AsynLoad.LoadScene("AfterMenu");
     }
 
     public void Appear()
     {
         player.SetActive(true);
         transform.gameObject.SetActive(false);
+    }
+
+    public void ShowPen()
+    {
+        get.Play();
+        drop.Play();
+        pen.SetActive(true);
     }
 }

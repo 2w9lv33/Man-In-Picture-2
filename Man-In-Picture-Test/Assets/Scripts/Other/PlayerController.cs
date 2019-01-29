@@ -32,7 +32,6 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-
     }
 
     //walk

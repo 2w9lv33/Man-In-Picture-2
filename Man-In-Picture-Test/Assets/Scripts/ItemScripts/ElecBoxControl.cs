@@ -12,6 +12,7 @@ public class ElecBoxControl : MonoBehaviour
     public GameObject room;
     public GameObject Enemy;
     public ColorSystem ColorSystem;
+    public GameObject light;
     public GameObject trapbefore;
     public GameObject trap2;
 
@@ -25,6 +26,7 @@ public class ElecBoxControl : MonoBehaviour
             Invoke("OpenDoor", 1f);
             ColorSystem.IsUILayer = false;
             trapbefore.SetActive(false);
+            light.SetActive(false);
             trap2.SetActive(false);
             Canvas.gameObject.SetActive(false);
         }

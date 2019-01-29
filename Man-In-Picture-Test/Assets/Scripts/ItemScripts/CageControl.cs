@@ -30,7 +30,7 @@ public class CageControl : MonoBehaviour
             Player.GetComponent<Animator>().SetBool("Get",true);
             color.checkColor = Game.Color.MyColor.NOCOLOR;
             GameObject.Find("key").GetComponent<SpriteRenderer>().enabled = true;
-            Invoke("Unshowkey", 3);
+            Invoke("Unshowkey", 4);
         }
         else
         {

@@ -5,6 +5,7 @@ using UnityEngine;
 public class DoorControl : MonoBehaviour
 {
     public GameObject player;
+    public AudioSource open;
     public Animator door;
     [SerializeField] private bool doorIsTriggered = false;
 
@@ -16,21 +17,25 @@ public class DoorControl : MonoBehaviour
             {
                 player.SetActive(false);
                 door.SetBool("Open", true);
+                open.Play();
             }
             if (transform.name == "Door_m" && player.transform.GetComponent<PlayerController>().secondClear)
             {
                 player.SetActive(false);
                 door.SetBool("Open", true);
+                open.Play();
             }
             if (transform.name == "Door_F")
             {
                 player.SetActive(false);
                 door.SetBool("Open", true);
+                open.Play();
             }
         }
         if (transform.name == "Door_E" && player.transform.GetComponent<PlayerController>().awakeEnemy)
         {
             door.SetBool("Open", true);
+            open.Play();
             player.transform.GetComponent<PlayerController>().awakeEnemy = false;
         }
     }
@@ -40,10 +45,12 @@ public class DoorControl : MonoBehaviour
         if(collision.gameObject.name == "Player" && transform.name == "Door_m")
         {
             doorIsTriggered = true;
+            open.Play();
         }
         if (collision.gameObject.name == "Player" && transform.name == "Door_F")
         {
             doorIsTriggered = true;
+            open.Play();
         }
     }
 
@@ -52,6 +59,7 @@ public class DoorControl : MonoBehaviour
         if (collision.name == "Player" && transform.name == "Door_T")
         {
             doorIsTriggered = true;
+            open.Play();
         }
     }
 
@@ -62,6 +70,7 @@ public class DoorControl : MonoBehaviour
 
     public void FinishOpen()
     {
+        open.Play();
         door.SetBool("Open", false);
     }
 

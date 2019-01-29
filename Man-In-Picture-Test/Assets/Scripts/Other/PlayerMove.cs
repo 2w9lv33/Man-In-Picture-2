@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
 
-    //public AudioSource audio;
+    public AudioSource walk;
+    public bool audioPlaying = false;
 
     public PlayerController playerController;
     public ColorSystem ColorSystem;
@@ -15,6 +16,11 @@ public class PlayerMove : MonoBehaviour
     public float moveVelocity = 0f;
     public bool onUILayer = false;
     public Vector3 mousePosition = Vector3.zero;
+
+    private void Start()
+    {
+
+    }
 
     void Update () {
         if (Input.GetMouseButtonDown(0) && !onUILayer)
@@ -34,10 +40,17 @@ public class PlayerMove : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(moveVelocity != 0 && !walk.isPlaying && playerController.canMove)
+        {
+            walk.Play();
+        }
+        if(Mathf.Abs(moveVelocity - 0.01f) < 0.1f)
+        {
+            walk.Stop();
+        }
         if (!animator.GetBool("Using") && !animator.GetBool("Get"))
         {
             playerController.Move(moveVelocity);
-            //audio.Play();
         }
         else
         {

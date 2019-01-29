@@ -7,6 +7,9 @@ using UnityEngine.UI;
 
 public class ColorSystem : MonoBehaviour
 {
+
+    public AudioSource get, set;
+
     public GameObject player;
     public PlayerController PlayerController;
     public Animator animator;
@@ -79,6 +82,7 @@ public class ColorSystem : MonoBehaviour
         {
             if ((hit.transform.tag == "Item" || hit.transform.tag == "Enemy") && hit.transform.GetComponent<Game.Color>().canBeSet && palette != Game.Color.MyColor.NOCOLOR)
             {
+                set.Play();
                 PlayerController.canMove = false;
                 animator.SetBool("Use", true);
                 hit.transform.GetComponent<Game.Color>().myColor = palette;
@@ -109,6 +113,7 @@ public class ColorSystem : MonoBehaviour
         {
             if ((hit.transform.tag == "Item" || hit.transform.tag == "Enemy") && hit.transform.GetComponent<Game.Color>().canBeGet)
             {
+                get.Play();
                 PlayerController.canMove = false;
                 animator.SetBool("Use", true);
                 palette = hit.transform.GetComponent<Game.Color>().myColor;

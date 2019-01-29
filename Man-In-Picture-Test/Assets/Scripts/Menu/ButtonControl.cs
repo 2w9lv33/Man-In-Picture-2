@@ -10,6 +10,15 @@ public class ButtonControl : MonoBehaviour
     public Animator artist,player;
     private bool flag = false;
 
+    private void Update()
+    {
+        if (flag)
+        {
+            title.GetComponent<Image>().color = Color.Lerp(title.GetComponent<Image>().color, Color.clear, 0.04f);
+            play.GetComponent<Image>().color = Color.Lerp(play.GetComponent<Image>().color, Color.clear, 0.04f);
+        }
+    }
+
     public void Scale()
     {
         if (!flag)
@@ -24,16 +33,18 @@ public class ButtonControl : MonoBehaviour
 
     public void Click()
     {
-        flag = true;
-        mask.gameObject.SetActive(false);
-        artist.SetBool("draw", true);
-        player.SetBool("awake", true);
-        title.SetActive(false);
-        play.SetActive(false);
+        if (!flag)
+        {
+            flag = true;
+            mask.gameObject.SetActive(false);
+            artist.SetBool("draw", true);
+            player.SetBool("awake", true);
+        }
     }
 
     public void Reload()
     {
         AsynLoad.LoadScene(transform.name);
     }
+
 }

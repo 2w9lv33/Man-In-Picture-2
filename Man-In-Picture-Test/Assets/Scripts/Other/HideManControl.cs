@@ -5,6 +5,7 @@ using UnityEngine;
 public class HideManControl : MonoBehaviour
 {
     public Game.Color en1, en2;
+    public GameObject enemy1, enemy2;
     public SpriteRenderer Paint;
     public Color Color = Color.clear;
     public GameObject room1, room2;
@@ -14,6 +15,14 @@ public class HideManControl : MonoBehaviour
 
     private void Update()
     {
+        if(en1.myColor == Game.Color.MyColor.WHITE)
+        {
+            en2.myColor = Game.Color.MyColor.WHITE;
+        }
+        if (en2.myColor == Game.Color.MyColor.WHITE)
+        {
+            en1.myColor = Game.Color.MyColor.WHITE;
+        }
         if (en1.myColor == Game.Color.MyColor.WHITE && en2.myColor == Game.Color.MyColor.WHITE && flag)
         {
             LerpColor();
@@ -47,6 +56,10 @@ public class HideManControl : MonoBehaviour
     {
         if(en1.myColor == Game.Color.MyColor.WHITE && en2.myColor == Game.Color.MyColor.WHITE && collision.name == "Player" && !isChecked)
         {
+            enemy1.transform.Find("after").gameObject.SetActive(true);
+            enemy1.transform.Find("Enemy_1").gameObject.SetActive(false);
+            enemy2.transform.Find("after").gameObject.SetActive(true);
+            enemy2.transform.Find("Enemy2_1").gameObject.SetActive(false);
             transform.Find("Hideman_1").gameObject.SetActive(false);
             transform.Find("Hideman_2").gameObject.SetActive(true);
             transform.Find("P").gameObject.SetActive(true);
