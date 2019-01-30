@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/AfterFirst.unity
     guid: ccecfb579dada19449e26947ee2cfcb8
   - enabled: 1
+    path: Assets/Scenes/Menu2.unity
+    guid: 3c7e647d5a545694f9e137e9d1c76e0f
+  - enabled: 1
     path: Assets/Scenes/AfterMenu.unity
     guid: c5e0a1de6db5e554b8f8b5d71ffc041e
   - enabled: 1
