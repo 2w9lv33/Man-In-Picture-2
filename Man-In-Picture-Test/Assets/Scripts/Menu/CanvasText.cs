@@ -9,6 +9,7 @@ public class CanvasText : MonoBehaviour
     public Transform[] pos;
     public Text[] texts;
     public int num = 0;
+    public bool flag = false;
 
     private void Start()
     {
@@ -18,17 +19,23 @@ public class CanvasText : MonoBehaviour
         }
         texts[0].gameObject.SetActive(true);
     }
+
     // Update is called once per frame
     void Update()
     {
         if (num < pos.Length && Mathf.Abs(ComicCamera.position.x - pos[num].position.x) < 0.5f) 
         {
             texts[num].gameObject.SetActive(true);
+            flag = false;
         }
         else
         {
             texts[num].gameObject.SetActive(false);
-            num++;
+            if (!flag)
+            {
+                num++;
+                flag = true;
+            }
         }
     }
 }
