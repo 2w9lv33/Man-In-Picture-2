@@ -271,7 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50b50c6e3dee0ec4185ab1a03b44e025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ComicCamera: {fileID: 0}
+  ComicCamera: {fileID: 661467090}
   pos:
   - {fileID: 961795393}
   - {fileID: 1898830147}
@@ -547,11 +547,7 @@ MonoBehaviour:
   - {fileID: 1364816820}
   - {fileID: 1152666270}
   comic: {fileID: 595779161}
-  num: 0
-  max: 0
-  position: {x: 0, y: 0, z: 0}
-  dir: {x: 0, y: 0, z: 0}
-  flag: 1
+  pic: 0
 --- !u!81 &661467088
 AudioListener:
   m_ObjectHideFlags: 0

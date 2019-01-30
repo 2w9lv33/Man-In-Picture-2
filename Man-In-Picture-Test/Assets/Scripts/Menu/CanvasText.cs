@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CanvasText : MonoBehaviour
 {
-    public Camera ComicCamera;
+    public Transform ComicCamera;
     public Transform[] pos;
     public Text[] texts;
     public int num = 0;
@@ -21,7 +21,7 @@ public class CanvasText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (num < pos.Length && Mathf.Abs(ComicCamera.transform.position.x - pos[num].position.x) < 0.5f) 
+        if (num < pos.Length && Mathf.Abs(ComicCamera.position.x - pos[num].position.x) < 0.5f) 
         {
             texts[num].gameObject.SetActive(true);
         }
