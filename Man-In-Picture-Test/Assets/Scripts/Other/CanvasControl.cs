@@ -6,11 +6,14 @@ using UnityEngine.UI;
 
 public class CanvasControl : MonoBehaviour
 {
+
+    public AudioSource get, set;
+
     GraphicRaycaster m_Raycaster;
     PointerEventData m_PointerEventData;
     EventSystem m_EventSystem;
     public ColorSystem ColorSystem;
-    public Image UI;
+    //public Image UI;
     //public ColorSystem ColorSystem;
 
 
@@ -52,7 +55,10 @@ public class CanvasControl : MonoBehaviour
                     GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMove>().moveVelocity = 0f;
                     GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().SetFloat("Speed", -5f);
                     if (results[0].gameObject.tag == "Item" && results[0].gameObject.GetComponent<Game.Color>().canBeGet)
-                    ColorSystem.palette = results[0].gameObject.GetComponent<Game.Color>().myColor;
+                    {
+                        get.Play();
+                        ColorSystem.palette = results[0].gameObject.GetComponent<Game.Color>().myColor;
+                    }
                 }
             }
         }
@@ -70,6 +76,7 @@ public class CanvasControl : MonoBehaviour
                     GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().SetFloat("Speed", -5f);
                     if (results[0].gameObject.tag == "Item" && results[0].gameObject.GetComponent<Game.Color>().canBeSet)
                     {
+                        set.Play();
                         results[0].gameObject.GetComponent<Game.Color>().myColor = ColorSystem.palette;
                         ColorSystem.palette = Game.Color.MyColor.NOCOLOR;
                     }
@@ -126,30 +133,30 @@ public class CanvasControl : MonoBehaviour
         }
     }
 
-    public void ChangeUI(Game.Color.MyColor myColor)
-    {
-        switch (myColor)
-        {
-            case Game.Color.MyColor.RED:
-                UI.color = UnityEngine.Color.red;
-                break;
-            case Game.Color.MyColor.ORANGE:
-                UI.color = UnityEngine.Color.red;
-                break;
-            case Game.Color.MyColor.CYAN:
-                UI.color = UnityEngine.Color.cyan;
-                break;
-            case Game.Color.MyColor.BLUE:
-                UI.color = UnityEngine.Color.blue;
-                break;
-            case Game.Color.MyColor.YELLOW:
-                UI.color = UnityEngine.Color.yellow;
-                break;
-            case Game.Color.MyColor.BLACK:
-                UI.color = UnityEngine.Color.gray;
-                break;
-            default:
-                break;
-        }
-    }
+    //public void ChangeUI(Game.Color.MyColor myColor)
+    //{
+    //    switch (myColor)
+    //    {
+    //        case Game.Color.MyColor.RED:
+    //            UI.color = UnityEngine.Color.red;
+    //            break;
+    //        case Game.Color.MyColor.ORANGE:
+    //            UI.color = UnityEngine.Color.red;
+    //            break;
+    //        case Game.Color.MyColor.CYAN:
+    //            UI.color = UnityEngine.Color.cyan;
+    //            break;
+    //        case Game.Color.MyColor.BLUE:
+    //            UI.color = UnityEngine.Color.blue;
+    //            break;
+    //        case Game.Color.MyColor.YELLOW:
+    //            UI.color = UnityEngine.Color.yellow;
+    //            break;
+    //        case Game.Color.MyColor.BLACK:
+    //            UI.color = UnityEngine.Color.gray;
+    //            break;
+    //        default:
+    //            break;
+    //    }
+    //}
 }

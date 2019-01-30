@@ -15,11 +15,19 @@ public class ElecBoxControl : MonoBehaviour
     public GameObject light;
     public GameObject trapbefore;
     public GameObject trap2;
+    public AudioSource lightoff;
+
+    private bool flag = false;
 
     private void Update()
     {
         if(Color.myColor == Game.Color.MyColor.BLACK)
         {
+            if (!lightoff.isPlaying && !flag)
+            {
+                lightoff.Play();
+                flag = true;
+            }
             Electric.SetBool("Play",false);
             room.transform.Find("Room_2").gameObject.SetActive(true);
             Invoke("AwakeEnemy", 3f);

@@ -9,6 +9,7 @@ public class WallControl : MonoBehaviour
     public Animator animator;
     public Canvas Canvas;
     public ColorSystem ColorSystem;
+    public AudioSource wall;
     
     void Update()
     {
@@ -18,6 +19,7 @@ public class WallControl : MonoBehaviour
         {
             ColorSystem.IsUILayer = false;
             animator.SetBool("Open", true);
+            wall.Play();
             Canvas.transform.Find("BOOK").gameObject.SetActive(false);
             Canvas.gameObject.SetActive(false);
         }
