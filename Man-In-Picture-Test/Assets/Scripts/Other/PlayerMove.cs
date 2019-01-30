@@ -25,7 +25,7 @@ public class PlayerMove : MonoBehaviour
     void Update () {
         if (Input.GetMouseButtonDown(0) && !onUILayer)
         {
-            mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePosition = UnityEngine.Camera.main.ScreenToWorldPoint(Input.mousePosition);
             moveVelocity = (mousePosition.x > transform.position.x ? 1 : -1) * playerSpeed;
             animator.SetFloat("Speed", Mathf.Abs(moveVelocity));
         }

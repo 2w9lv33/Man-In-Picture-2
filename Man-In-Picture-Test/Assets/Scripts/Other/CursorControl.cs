@@ -15,7 +15,7 @@ public class CursorControl : MonoBehaviour
 
     void Update()
     {
-        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePosition = UnityEngine.Camera.main.ScreenToWorldPoint(Input.mousePosition);
         GetItem(mousePosition);
     }
 

@@ -56,20 +56,20 @@ public class ColorSystem : MonoBehaviour
 
     public void Click()
     {
-        if (palette == Game.Color.MyColor.NOCOLOR && IsItem(Camera.main.ScreenToWorldPoint(Input.mousePosition)))
+        if (palette == Game.Color.MyColor.NOCOLOR && IsItem(UnityEngine.Camera.main.ScreenToWorldPoint(Input.mousePosition)))
         {
             if (Input.GetMouseButtonDown(0) && !IsUILayer && !Set)
             {
                 Get = true;
-                mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                mousePosition = UnityEngine.Camera.main.ScreenToWorldPoint(Input.mousePosition);
             }
         }
-        if (palette != Game.Color.MyColor.NOCOLOR && IsItem(Camera.main.ScreenToWorldPoint(Input.mousePosition)))
+        if (palette != Game.Color.MyColor.NOCOLOR && IsItem(UnityEngine.Camera.main.ScreenToWorldPoint(Input.mousePosition)))
         {
             if (Input.GetMouseButtonDown(0) && !IsUILayer && !Get)
             {
                 Set = true;
-                mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                mousePosition = UnityEngine.Camera.main.ScreenToWorldPoint(Input.mousePosition);
             }
         }
     }

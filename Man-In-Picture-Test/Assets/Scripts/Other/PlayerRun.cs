@@ -34,7 +34,7 @@ public class PlayerRun : MonoBehaviour
         MoveTo(mousePos);
         if (Input.GetMouseButtonDown(0))
         {
-            clickPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            clickPos = UnityEngine.Camera.main.ScreenToWorldPoint(Input.mousePosition);
             if(clickPos.x - now.x>0f)
             {
                 mousePos = minP;

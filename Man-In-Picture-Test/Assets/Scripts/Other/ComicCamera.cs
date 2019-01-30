@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ComicCamera : MonoBehaviour
+public class Camera : MonoBehaviour
 {
     public Transform[] positions;
     public GameObject comic;
     private int num,max = 0;
+    public int pic = 0;
     private Vector3 position =Vector3.zero;
     private Vector3 dir;
     private bool flag = true;
