@@ -5243,6 +5243,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1454813131, guid: 34a0fadca3c0e914eb7a1ef2c6cbf04c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1454813131, guid: 34a0fadca3c0e914eb7a1ef2c6cbf04c, type: 3}
+      propertyPath: m_MaskAlphaCutoff
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 3177845147797642665, guid: 34a0fadca3c0e914eb7a1ef2c6cbf04c,
         type: 3}
       propertyPath: player_FacingRight
@@ -5331,14 +5339,6 @@ PrefabInstance:
     - target: {fileID: 1066356232, guid: 34a0fadca3c0e914eb7a1ef2c6cbf04c, type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1454813131, guid: 34a0fadca3c0e914eb7a1ef2c6cbf04c, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1454813131, guid: 34a0fadca3c0e914eb7a1ef2c6cbf04c, type: 3}
-      propertyPath: m_MaskAlphaCutoff
-      value: 0.75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34a0fadca3c0e914eb7a1ef2c6cbf04c, type: 3}

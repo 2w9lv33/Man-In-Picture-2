@@ -46,7 +46,7 @@ public class PlayerRun : MonoBehaviour
         }
         if (bookCase2.myColor == Game.Color.MyColor.BLACK || bookCase1.myColor == Game.Color.MyColor.BLACK)
         {
-            Invoke("LoadLastScene", 2f);
+            Invoke("LoadLastScene", 0.4f);
         }
     }
 
