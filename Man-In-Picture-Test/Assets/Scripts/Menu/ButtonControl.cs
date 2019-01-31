@@ -8,6 +8,7 @@ public class ButtonControl : MonoBehaviour
     public GameObject title, play;
     public Image mask;
     public Animator artist,player;
+    public Text text;
     private bool flag = false;
 
     private void Update()
@@ -35,6 +36,7 @@ public class ButtonControl : MonoBehaviour
     {
         if (!flag)
         {
+            text.gameObject.SetActive(true);
             flag = true;
             mask.gameObject.SetActive(false);
             artist.SetBool("draw", true);

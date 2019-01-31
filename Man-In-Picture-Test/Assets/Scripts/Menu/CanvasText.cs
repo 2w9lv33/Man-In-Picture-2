@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class CanvasText : MonoBehaviour
 {
     public Transform ComicCamera;
+    public float length = 5f;
     public Transform[] pos;
     public Text[] texts;
     public int num = 0;
@@ -17,24 +18,26 @@ public class CanvasText : MonoBehaviour
         {
             text.transform.gameObject.SetActive(false);
         }
-        texts[0].gameObject.SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (num < pos.Length && Mathf.Abs(ComicCamera.position.x - pos[num].position.x) < 0.5f) 
+        if (num < pos.Length && Mathf.Abs(ComicCamera.position.x - pos[num].position.x) < 0.5f)
         {
-            texts[num].gameObject.SetActive(true);
-            flag = false;
-        }
-        else
-        {
-            texts[num].gameObject.SetActive(false);
-            if (!flag)
+            if (Mathf.Abs(ComicCamera.position.y - pos[num].position.y) < length)
             {
-                num++;
-                flag = true;
+                texts[num].gameObject.SetActive(true);
+                flag = false;
+            }
+            else
+            {
+                if (!flag)
+                {
+                    texts[num].gameObject.SetActive(false);
+                    num++;
+                    flag = true;
+                }
             }
         }
     }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player2 : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Player2 : MonoBehaviour
     public Animator palette;
     public bool flag = false;
     public AudioSource eraser;
+    public Text text;
 
     private void Update()
     {
@@ -15,10 +17,11 @@ public class Player2 : MonoBehaviour
         {
             if (transform.position.x > end.position.x)
             {
-                transform.position += new Vector3(-1, 0, 0);
+                transform.position += new Vector3(-3, 0, 0);
             }
             else
             {
+                text.gameObject.SetActive(true);
                 transform.GetComponent<Animator>().SetBool("draw", true);
                 palette.SetBool("draw", true);
                 if (!eraser.isPlaying)
@@ -35,6 +38,11 @@ public class Player2 : MonoBehaviour
         transform.GetComponent<Animator>().SetBool("walk", true);
         transform.localScale = new Vector3(-0.4f, 1, 1);
         flag = true;
+    }
+
+    public void Art()
+    {
+        transform.GetComponent<Animator>().SetBool("artist", true);
     }
 
     public void Load()
